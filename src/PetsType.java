@@ -1,12 +1,12 @@
-public enum petsList {
+public enum PetsType {
     DOG("Dog"),
     CAT("Cat");
 
 
-    String typeName = " ";
+    String typeName = "";
     private static int petsInList = 2;
 
-    petsList(String petName) {
+    PetsType(String petName) {
         this.typeName = petName;
     }
 

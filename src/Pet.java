@@ -8,9 +8,9 @@ public class Pet {
     private boolean needAToilet = false;
     private boolean needAShower = false;
 
-    private petsList petType;
+    private PetsType petType;
 
-    public Pet(petsList petType) {
+    public Pet(PetsType petType) {
         this.petType = petType;
     }
 
@@ -40,7 +40,7 @@ public class Pet {
 
     public boolean isNeedAShower(){return needAShower;}
 
-    public petsList getPetType() {
+    public PetsType getPetType() {
         return petType;
     }
 

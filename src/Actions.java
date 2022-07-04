@@ -1,6 +1,3 @@
-
-import java.util.Random;
-
 public class Actions {
     public static void printGameMenu() {
         System.out.println("Choose your action:");
@@ -49,7 +46,7 @@ public class Actions {
 
     public static void checkDamage(Pet pet){
         int anotherDamage=0;
-        if(pet.getPetType()==petsList.CAT){
+        if(pet.getPetType()== PetsType.CAT){
             anotherDamage=10;
         }
         if(pet.getStress()>=100){

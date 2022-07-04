@@ -1,5 +1,3 @@
-import jdk.jshell.execution.Util;
-
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
@@ -13,18 +11,18 @@ public class Main {
         int stepWithToiletNeedCounter = 0;
         int caressCounter = 0;
         int waterCounter=0;
-        Pet pet = new Pet(petsList.DOG);//питомец по умолчанию
+        Pet pet = new Pet(PetsType.DOG);//питомец по умолчанию
 
         Actions.printCreatePetMenu();
 
-        int numberOfPet = Utilites.enterInt("Your choose:", 1, petsList.getPetsInList());
+        int numberOfPet = Utilites.enterInt("Your choose:", 1, PetsType.getPetsInList());
 
         switch (numberOfPet) {//выбор питомца
             case 1:
-                pet = new Pet(petsList.DOG);
+                pet = new Pet(PetsType.DOG);
                 break;
             case 2:
-                pet = new Pet(petsList.CAT);
+                pet = new Pet(PetsType.CAT);
                 break;
         }
 
@@ -92,7 +90,7 @@ public class Main {
                 break;
                 case 4: {
                     pet.setNeedAShower(false);
-                    if (pet.getPetType() == petsList.CAT) {//питомец CAT испытывает стресс при принятии душа
+                    if (pet.getPetType() == PetsType.CAT) {//питомец CAT испытывает стресс при принятии душа
                         pet.increaseStress(20);
                     }
                     Utilites.clearConsole();
@@ -109,7 +107,7 @@ public class Main {
                     Utilites.clearConsole();
                     System.out.println(pet.getPetType() + " makes happy sounds");
                     Thread.sleep(2000);
-                    if(pet.getPetType()==petsList.CAT){
+                    if(pet.getPetType()== PetsType.CAT){
                         System.out.println("Meeeew... <3");
                     }else{
                         System.out.println("Gav gav...<3");
@@ -147,10 +145,10 @@ public class Main {
             if (pet.getHealthPoints() < 100) {//реген работает если хп меньше 100
                 Actions.checkRegen(pet);
             }
-            if (pet.getStress() >= 100 && pet.getPetType() == petsList.CAT) {
+            if (pet.getStress() >= 100 && pet.getPetType() == PetsType.CAT) {
                 caressCounter = 0;
             }
-            if (caressCounter > 3 && pet.getPetType() == petsList.CAT) {//если питомец CAT то его не стоит лишний раз гладить
+            if (caressCounter > 3 && pet.getPetType() == PetsType.CAT) {//если питомец CAT то его не стоит лишний раз гладить
                 //счетчик обновиться выше, если питомец испытает высокий стресс
                 pet.increaseStress(10);
             }
